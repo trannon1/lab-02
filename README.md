@@ -1,4 +1,4 @@
-# lab-
+# lab-02: jQuery events and selectors
 
 Number and name of feature: Feature #1: Display images
 
@@ -15,19 +15,19 @@ Number and name of feature: Feature #2: Filter images
 
 Estimate of time needed to complete: 30 minutes - 1 hour
 
-Start time: _____
+Start time: 9:46
 
-Finish time: _____
+Finish time: 11:58
 
-Actual time needed to complete: _____
+Actual time needed to complete: 2 hours, 12 minutes
 
 
 Number and name of feature: Feature #3: Style the application
 
 Estimate of time needed to complete: 30 minutes
 
-Start time: _____
+Start time: 12:00
 
-Finish time: _____
+Finish time: 12:30
 
-Actual time needed to complete: _____
+Actual time needed to complete: 30 minutes
