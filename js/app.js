@@ -12,6 +12,22 @@ function Animal(animalObj) {
   animalArray.push(this);
 }
 
+//Dropdown menu function
+function renderDropdown (animalArray){
+
+    const tempArray = [];
+    animalArray.forEach(animal => {
+        if (!tempArray.includes(animal.keyword)){
+            tempArray.push(animal.keyword);
+        }
+    })
+    tempArray.forEach(keyword => {
+        const $newSection = $('<option></option>');
+        $newSection.text(keyword);
+        $('optgroup').append($newSection);
+    })
+}
+
 Animal.prototype.render = function () {
   // make a template
   const myTemplate = $('#animal-template').html();
@@ -38,25 +54,23 @@ Animal.prototype.render = function () {
   $('main').append($newSection);
 }
 
+//Create dropdown menu
 $(document).ready($.get('data/page-1.json', data => {
   data.forEach(animal => {
     new Animal(animal).render();
   });
+  renderDropdown(data);
 })
 );
 
-// add listener to every object
-// its callback would check its value against every object's keyword in the json data
-$('optgroup option').on('click', function (event) {
+//Filters animals via selections
+$(document).ready($('#myselection').on('change', function (event) {
+    $("section").hide();
+        animalArray.forEach(animal => {
+          if (this.value === animal.keyword) {
+            animal.render();
+          }
+        });
+      })
+);
 
-  const tempArray = [];
-  animalArray.forEach(animal => {
-    if (this.value === animal.keyword) {
-      tempArray.push(animal);
-    }
-  });
-  // clear all the images
-  $('main').empty();
-  // display only matching images
-  tempArray.render();
-});
